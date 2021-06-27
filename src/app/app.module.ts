@@ -26,6 +26,7 @@ import {
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 import { ModalDialogService } from './services/modal-dialog.service';
 import { ProductosComponent } from './components/productos/productos.component';
+import { ProductosService } from './services/productos.service';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     MockArticulosFamiliasService,
     ArticulosFamiliasService,
     ArticulosService,
-    ModalDialogService
+    ModalDialogService,
+    ProductosService
   ]
 })
 export class AppModule {}
