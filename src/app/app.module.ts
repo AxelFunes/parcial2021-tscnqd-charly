@@ -25,6 +25,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 import { ModalDialogService } from './services/modal-dialog.service';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { ModalDialogService } from './services/modal-dialog.service';
     ArticulosFamiliasComponent,
     MenuComponent,
     ArticulosComponent,
-    ModalDialogComponent
+    ModalDialogComponent,
+    ProductosComponent
   ],
   entryComponents: [ModalDialogComponent],
   bootstrap: [AppComponent],
