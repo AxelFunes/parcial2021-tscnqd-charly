@@ -41,7 +41,8 @@ import { ProductosService } from './services/productos.service';
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'inicio', component: InicioComponent },
       { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
-      { path: 'articulos', component: ArticulosComponent }
+      { path: 'articulos', component: ArticulosComponent },
+      { path: 'productos', component: ProductosComponent }
     ])
   ],
   declarations: [
