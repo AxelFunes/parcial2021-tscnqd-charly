@@ -3,28 +3,7 @@
 <!-- Formulario Filtro de búsqueda, se ve cuando la AccionABMC es "L"(busqueda/listado)-->
 <form name="FormBusqueda" [formGroup]="FormBusqueda" class="bg-light" *ngIf="AccionABMC == 'L'">
   <div class="form-group row">
-    <label class="col-form-label col-sm-2 offset-sm-1">
-      Nombre:
-    </label>
-    <div class="col-sm-3">
-      <input
-        type="text"
-        name="Nombre"
-        class="form-control"
-        formControlName="Nombre"
-      />
-    </div>
-    <label class="col-form-label col-sm-2  offset-sm-1">
-      Activo:
-    </label>
-    <div class="col-sm-3">
-      <select class="form-control" name="Activo" formControlName="Activo">
-        <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
-          ‌{{ opt.Nombre }}
-        </option>
-      </select>
-    </div>
-  </div>
+    
   <!-- Botones -->
   <div class="row justify-content-center">
     <button type="button" class="btn btn-primary" (click)="Pagina=1;Buscar();">
@@ -43,49 +22,18 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th class="text-center">Nombre</th>
-        <th class="text-center">Familia</th>
-        <th class="text-center">Precio</th>
-        <th class="text-center">Stock</th>
+        <th class="text-center">Producto ID</th>
+        <th class="text-center">Nombre de Producto</th>
+        <th class="text-center">Stock de Producto</th>
         <th class="text-center">Fecha de Alta</th>
-        <th class="text-center">Activo</th>
-        <th class="text-center text-nowrap">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of Items">
-        <td>{{item.Nombre | uppercase}}</td>
-        <td>{{GetArticuloFamiliaNombre(item.IdArticuloFamilia)}}</td>
-        <td class="text-right">{{item.Precio | currency: "$"}}</td>
-        <td class="text-right">{{item.Stock}}</td>
-        <td>{{item.FechaAlta| date:'dd/MM/yyyy'}}</td>
-        <td>{{item.Activo ? 'SI' : 'NO'}}</td>
-        <td class="text-center text-nowrap">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-primary"
-            title="Consultar"
-            (click)="Consultar(item)"
-          >
-            <span class="fas fa-eye"></span>
-          </button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-primary"
-            title="Modificar"
-            (click)="Modificar(item)"
-          >
-            <span class="fas fa-pencil-alt"></span>
-          </button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-{{ item.Activo ? 'danger':'success'}}"
-            title="{{item.Activo ? 'Desactivar':'Activar'}}"
-            (click)="ActivarDesactivar(item)"
-          >
-            <span class="fas fa-{{item.Activo ? 'times':'check'}}"></span>
-          </button>
-        </td>
+        <td>{{item.ProductoID | uppercase}}</td>
+        <td>{{item.ProductoNombre | uppercase}}</td>
+        <td>{{item.ProductoFechaAlta| date:'dd/MM/yyyy'}}</td>
+        <td class="text-right">{{item.ProductoStock}}</td>
       </tr>
     </tbody>
   </table>
