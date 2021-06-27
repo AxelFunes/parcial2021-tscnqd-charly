@@ -95,9 +95,9 @@ export class ProductosComponent implements OnInit {
     const itemCopy = { ...this.FormRegistro.value };
 
     //convertir fecha de string dd/MM/yyyy a ISO para que la entienda webapi
-    var arrFecha = itemCopy.FechaAlta.substr(0, 10).split('/');
+    var arrFecha = itemCopy.ProductoFechaAlta.substr(0, 10).split('/');
     if (arrFecha.length == 3)
-      itemCopy.FechaAlta = new Date(
+      itemCopy.ProductoFechaAlta = new Date(
         arrFecha[2],
         arrFecha[1] - 1,
         arrFecha[0]
