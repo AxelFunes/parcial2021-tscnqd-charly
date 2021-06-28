@@ -1,6 +1,6 @@
 export class Producto {
   ProductoID: number;
   ProductoNombre: string;
-  ProductoFechaAlta: Date;
+  ProductoFechaAlta: string;
   ProductoStock: number;
 }
