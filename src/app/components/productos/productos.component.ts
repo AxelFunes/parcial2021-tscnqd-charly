@@ -13,9 +13,9 @@ export class ProductosComponent implements OnInit {
   Titulo = 'Productos';
   TituloAccionABMC = {
     A: '(Agregar)',
-    B: '(Eliminar)',
-    M: '(Modificar)',
-    C: '(Consultar)',
+    //B: '(Eliminar)',
+    //M: '(Modificar)',
+    //C: '(Consultar)',
     L: '(Listado)'
   };
   AccionABMC = 'L'; // inicialmente inicia en el listado de articulos (buscar con parametros)
@@ -41,10 +41,11 @@ export class ProductosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.FormRegistro = this.formBuilder.group({});
     this.FormRegistro = this.formBuilder.group({
       ProductoID: [null],
       ProductoNombre: [
-        null,
+        '',
         [Validators.required, Validators.minLength(5), Validators.maxLength(50)]
       ],
       ProductoFechaAlta: [
@@ -61,6 +62,7 @@ export class ProductosComponent implements OnInit {
         [Validators.required, Validators.pattern('^\\d{1,10}$')]
       ]
     });
+    this.Buscar();
   }
 
   Agregar() {
@@ -125,4 +127,6 @@ export class ProductosComponent implements OnInit {
   ImprimirListado() {
     this.modalDialogService.Alert('Sin desarrollar...');
   }
+
+  
 }
