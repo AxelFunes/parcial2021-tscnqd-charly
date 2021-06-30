@@ -7,7 +7,7 @@
 
     <!-- Botones -->
     <div class="row justify-content-center">
-      
+
       &nbsp;
       <button type="button" class="btn btn-primary" (click)="Agregar()">
     <span class="fas fa-plus"> </span>
@@ -37,7 +37,7 @@
       </tr>
     </tbody>
   </table>
-  <!-- Paginador-->
+  <!-- Paginador
   <div id="divPaginador">
     <div class="row bg-light">
       <div class="col">
@@ -60,7 +60,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
 
 <!--No se encontraron registros-->
@@ -82,7 +82,7 @@
         <span class="text-danger" *ngIf="(FormRegistro.controls.ProductoNombre.touched || submitted) && FormRegistro.controls.ProductoNombre.errors && FormRegistro.controls.ProductoNombre.errors.required ">
           Dato requerido
         </span>
-        <span class="text-danger" *ngIf="(FormRegistro.controls.ProductoNombre.touched || submitted) && (FormRegistro.controls.ProductoNombre.errors?.minlength || FormRegistro.controls.ProductoNombre.errors?.maxlength)">Dato texto hasta 50 caracteres</span>
+        <span class="text-danger" *ngIf="(FormRegistro.controls.ProductoNombre.touched || submitted) && (FormRegistro.controls.ProductoNombre.errors?.minlength || FormRegistro.controls.ProductoNombre.errors?.maxlength)">Dato texto de 5 hasta 50 caracteres</span>
       </div>
     </div>
 
